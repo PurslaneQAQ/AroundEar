@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/common.css">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.11.2/css/pro.min.css">
+  </head>
+  <body>
+    <div class = "container">
+      <ul id="myTab" class="nav nav-tabs">
+        <li class="active">
+            <a href="#trainModule" data-toggle="tab">Train</a>
+        </li>
+        <li>
+          <a href="#testModule" data-toggle="tab">Test</a>
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in active" id="trainModule">
+          <div class = "train-btn-group">
+            <button class = "btn btn-default" id="default" onmousedown="collect(0)" onmouseup="collect(null)">Default</button>
+            <button class = "btn btn-default" id="yes" onmousedown="collect(1)" onmouseup="collect(null)">Yes</button>
+            <button class = "btn btn-default" id="no" onmousedown="collect(2)" onmouseup="collect(null)">No</button>
+            <button class = "btn btn-default" id="nav" onmousedown="collect(3)" onmouseup="collect(null)">Nav</button>
+            <button class = "btn btn-default" id="busy" onmousedown="collect(4)" onmouseup="collect(null)">Busy</button>
+          </div>
+          <button class = "btn btn-primary"id="train" onclick="train()">Train</button>
+          <div id="console"></div>
+          <div id="freq"></div>
+        </div>
+        
+
+        <div class="tab-pane fade in" id="testModule">
+          <input type="range" style = "visibility: hidden;" id="output" min="0" max="10" step="0.1">
+          <table id = "testTable">
+            <thead>
+              <tr>
+                <th>User</th><th>Test Goal</th><th>System Result</th><th>Probability</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- <tr class = "record">
+                <td><input class="form-control" placeholder="Username" type = "text"/></td>
+                <td class = "shared3-td">
+                  <span><select class="form-control">
+                    <option value="0">0 noise</option>
+                    <option value="1">1 yes</option>
+                    <option value="2">2 no</option>
+                    <option value="3">3 nav</option>
+                    <option value="4">4 busy</option>
+                  </select></span>
+                  <span><i class="fas fa-play btn"></i></span>
+                  <span><i class="fas fa-record-vinyl btn" id="listen00" onclick="listen(id)"></i></span>
+                </td>
+                
+                <td>-</td>
+                <td>-</td>
+              </tr> -->
+              <tr id = "addAnchor">
+                <td colspan="4">
+                  <button class = "btn btn-default form-control" onclick="addUser()"><i class="fas fa-plus"></i> Add User</button>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+          <!--button class = "btn btn-default" id="listen" onclick="listen()">Listen</button-->
+          <!-- <input type="range" id="output" min="0" max="10" step="0.1"> -->
+          
+        </div>
+      </div>
+    </div>
+    <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <script src="https://unpkg.com/@tensorflow-models/speech-commands"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

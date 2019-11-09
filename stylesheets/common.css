@@ -1,0 +1,131 @@
+html{
+    font-size: 10px;
+}
+
+body{
+    height: 100%;
+    min-width: 320px;
+    font-size: 1.6rem;
+    background-color: whitesmoke;
+    color: #555;
+}
+
+.container{
+    padding: 50px 120px;
+    background-color: white;
+    min-height: 100%;
+    text-align: center;
+}
+
+.nav-tabs li{
+    width: 32%;
+}
+
+.btn:active,
+.btn:focus,
+.btn{
+    outline: none;
+}
+
+.train-btn-group{
+    margin: 120px auto 80px auto;
+}
+
+.train-btn-group .btn{
+    margin-left: 2.2%;
+    width: 17.5%;
+    font-size: 1.5rem;
+    height: 50px;
+}
+
+.train-btn-group .btn:first-of-type{
+    margin-left: 0;
+}
+
+#train{
+    width: 60%;
+    height: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(0, 122, 204);
+    border: 0;
+}
+
+#testTable{
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+}
+
+#testTable td{
+    height: 50px;
+    line-height: 35px;
+}
+
+#testTable th{
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: solid 1px #ddd;
+}
+
+#testTable th:first-of-type{
+    width: 20%;
+}
+
+#testTable th:nth-of-type(2){
+    width: 40%;
+}
+
+.shared3-td span{
+    margin: 0 auto;
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+}
+
+.shared3-td span:first-of-type{
+    width: 40%;
+    margin-right: 5%;
+}
+
+.record i.active{
+    color: rgb(0, 122, 204);
+}
+
+.record i.active:hover{
+    color: rgb(0, 111, 182);
+}
+
+.record i.active,
+.record i:active,
+.record i.active:active{
+    box-shadow: none;
+}
+
+.record i.active:active{
+    color: rgb(0, 100, 160);
+}
+
+@media screen and (max-width : 1000px){
+    html{
+        font-size: 9px;
+    }
+
+    .train-btn-group .btn{
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width : 510px){
+    html{
+        font-size: 8px;
+    }
+
+    .train-btn-group .btn{
+        margin-left: 1.5%;
+    }
+
+    .container{
+        padding: 50px 30px;
+    }
+}
