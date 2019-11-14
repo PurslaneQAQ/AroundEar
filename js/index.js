@@ -1,7 +1,7 @@
 let recognizer;
 
 // One frame is ~23ms of audio.
-const NUM_FRAMES = 3;
+const NUM_FRAMES = 15;
 let examples = [];
 
 const INPUT_SHAPE = [NUM_FRAMES, 232, 1];
@@ -110,18 +110,21 @@ async function moveSlider(labelTensor) {
      labelCount[0] = 0;
      let max = labelCount.indexOf(Math.max(...labelCount));
      let maxProb = labelCount[max]/(count - noise);
-     if(maxProb > 0.5 && listeningRecord != null){ // we only accept the result when the max probability is larger than 0.5
-      $(listeningRecord).parent().parent().next().text(max);
-      $(listeningRecord).parent().parent().next().next().text((labelCount[max]/(count - noise)).toFixed(3));
+     if(listeningRecord != null){ // we only accept the result when the max probability is larger than 0.5
+     //if(listeningRecord != null){
+      if(maxProb > 0.5){ 
+        $(listeningRecord).parent().parent().next().text(max);
+        $(listeningRecord).parent().parent().next().next().text((labelCount[max]/(count - noise)).toFixed(3));
 
-      listen(listeningRecord);
-      clearListeningRecord();
-      return;
-     }
-     else { // Unknown result
+        listen(listeningRecord);
+        clearListeningRecord();
+        return;
+      }
+      else { // Unknown result
       $(listeningRecord).parent().parent().next().text("unknown");
       $(listeningRecord).parent().parent().next().next().text("-");
-     }
+      }
+    }
    }
    round++;
    clearListeningRecord();
